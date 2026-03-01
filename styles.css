@@ -2,8 +2,13 @@
   --text:#111;
   --muted:#666;
   --border:#e8e8e8;
+  --blue-bg:#eaf3fb;
+  --blue-border:#cfdfee;
+  --blue-hover:#e1edf8;
+  --blue-hover-border:#bcd4ea;
 }
 
+/* Base */
 body{
   margin:0;
   background:#fff;
@@ -14,64 +19,64 @@ body{
   -webkit-text-size-adjust:100%;
 }
 
+/* Layout wrapper */
 .wrapper{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:48px 18px 64px;
+  padding:48px 16px 64px; /* equal left/right */
 }
 
+/* Main card */
 .card{
   width:100%;
-  max-width:640px;          /* narrower = more readable */
+  max-width:640px;
+  padding:56px 32px 56px; /* equal left/right */
   border:1px solid var(--border);
-  padding:56px 48px 60px;
-  box-sizing:border-box;
   border-radius:14px;
+  box-sizing:border-box;
 }
 
-/* Type */
+/* Typography */
 h1{
   font-weight:600;
   font-size:1.75rem;
   margin:0 0 6px;
-  letter-spacing:-.02em;
+  letter-spacing:-0.02em;
 }
 
 .sub{
   font-size:0.95rem;
   color:var(--muted);
-  margin:0 0 30px;
+  margin:0 0 32px;
 }
 
 p{
   font-size:1.06rem;
-  margin:0 0 24px;          /* consistent vertical rhythm */
+  margin:0 0 24px;
 }
 
-/* Notion-like “document” link */
+/* About document block */
 .doc-link{
   display:block;
-  margin-top:24px;
-
-  /* make it follow the same column as text */
   width:100%;
-  box-sizing:border-box;
+  margin-top:32px;
 
-  padding:16px 18px;
-  border:1px solid #cfdfee;
+  padding:18px 20px;  /* equal whitespace left/right */
+  border:1px solid var(--blue-border);
   border-radius:12px;
-  background:#eaf3fb;
+  background:var(--blue-bg);
 
   text-decoration:none;
   color:var(--text);
+  box-sizing:border-box;
 
-  transition: background .15s ease, border-color .15s ease;
+  transition:background .15s ease, border-color .15s ease;
 }
 
 .doc-link:hover{
-  background:#e1edf8;
-  border-color:#bcd4ea;
+  background:var(--blue-hover);
+  border-color:var(--blue-hover-border);
 }
 
 .doc-title{
@@ -86,28 +91,15 @@ p{
   margin:0;
 }
 
-/* Mobile: slightly tighter */
-@media (max-width:640px){
-  .doc-link{
-    padding:14px 16px;
-  }
-  .doc-title{
-    margin-bottom:4px;
-  }
-  .doc-sub{
-    font-size:0.86rem;
-  }
-}
 /* Mobile adjustments */
-@media (max-width: 640px){
+@media (max-width:640px){
 
   .wrapper{
     padding:28px 16px 48px;
   }
 
   .card{
-    max-width:520px;
-    padding:28px 22px 32px;
+    padding:28px 22px 36px;  /* equal left/right */
     border-radius:12px;
   }
 
@@ -116,16 +108,14 @@ p{
   }
 
   p{
-    font-size:1.08rem;      /* improved mobile readability */
+    font-size:1.08rem;
   }
 
   .doc-link{
-    max-width:100%;
-    margin-top:32px;
-    padding:12px 14px;
+    padding:16px 18px;
   }
 
   .doc-sub{
-    font-size:0.84rem;
+    font-size:0.86rem;
   }
 }
