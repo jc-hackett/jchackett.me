@@ -8,5 +8,5 @@
 
 I work with men in their twenties and thirties. My clients are typically creators and developers looking to harness their imagination and increase their focus.
 
-Drop me an email: 
+Drop me an email: <br>
 jeremiah at gmail dot com.
