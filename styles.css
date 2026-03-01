@@ -2,6 +2,17 @@
   --text:#111;
   --muted:#666;
   --border:#e8e8e8;
+
+  /* horizontal padding inside the card (desktop/mobile) */
+  --pad: 48px;
+  --pad-mobile: 22px;
+
+  /* link (document) colors */
+  --doc-bg: #f2f7fd;
+  --doc-border: #d7e6f5;
+  --doc-bg-hover: #e9f2fb;
+  --doc-border-hover: #c8def2;
+  --doc-sub: #5f6f7c;
 }
 
 body{
@@ -20,16 +31,17 @@ body{
   padding:48px 0 64px;
 }
 
+/* Card */
 .card{
-  width:100%;
-  max-width:640px;          /* narrower = more readable */
+  width:min(640px, calc(100% - 36px)); /* keeps even 18px gutters */
   border:1px solid var(--border);
-  padding:30px 48px 30px;
-  box-sizing:border-box;
   border-radius:14px;
-    margin:0 18px;
+  box-sizing:border-box;
+
+  padding:56px var(--pad) 60px;
 }
 
+/* Type */
 h1{
   font-weight:600;
   font-size:1.75rem;
@@ -48,6 +60,7 @@ p{
   margin:0 0 22px;
 }
 
+/* Notion-style “document link” */
 .doc-link{
   display:flex;
   align-items:baseline;
@@ -55,19 +68,27 @@ p{
 
   width:100%;
   margin-top:22px;
-  padding:14px 14px;
 
-  border:1px solid #d7e6f5;
+  /* border spans full card width */
+  padding:14px 0;
+
+  border:1px solid var(--doc-border);
   border-radius:8px;
-  background:#f2f7fd;
+  background:var(--doc-bg);
 
   text-decoration:none;
-  color:#111;
+  color:var(--text);
 }
 
 .doc-link:hover{
-  background:#e9f2fb;
-  border-color:#c8def2;
+  background:var(--doc-bg-hover);
+  border-color:var(--doc-border-hover);
+}
+
+/* Align inner text to the same left/right edges as paragraphs */
+.doc-link > *{
+  padding-left: var(--pad);
+  padding-right: var(--pad);
 }
 
 .doc-title{
@@ -78,21 +99,16 @@ p{
 
 .doc-sub{
   font-size:0.9rem;
-  color:#5f6f7c;
+  color:var(--doc-sub);
   line-height:1.2;
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 640px){
-
-  .wrapper{
-    padding:28px 0 48px;
-  }
-
   .card{
-    width:92%;
-    margin:0 auto;
-    padding:28px 22px 32px;
+    width:calc(100% - 32px); /* even 16px gutters */
+    padding:28px var(--pad-mobile) 32px;
+    border-radius:14px;
   }
 
   h1{
@@ -103,13 +119,12 @@ p{
     font-size:1.05rem;
   }
 
-  .doc-link{
-    padding:12px 14px;
-    margin-top:24px;
+  .doc-link > *{
+    padding-left: var(--pad-mobile);
+    padding-right: var(--pad-mobile);
   }
 
   .doc-sub{
     font-size:0.85rem;
   }
 }
-
