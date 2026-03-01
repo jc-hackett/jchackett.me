@@ -8,7 +8,7 @@
 
 I work with men between the ages of twenty and forty who are confronting life transitions, behavior change, anxiety, or depression in its more medication-resistant form.
 
-I take a practical and focused approach to counseling that leans heavily on the relational and humanist traditions of the profession. This means being authentic with my clients without compromising unconditional positive regard or placing their needs at the center of the work.
+I take a practical and focused approach to counseling that leans heavily on the relational and humanist traditions of the profession. This means being authentic with my clients, keeping their needs at the center of the work, and always treating them with unconditional positive regard
 
 I integrate motivational interviewing, cognitive-behavioral, mindfulness, and narrative approaches. Grounded in a social work perspective, my work emphasizes collaboration and critical reflection and doesn't ignore the social and cultural contexts that shape individual experience and change.
 
