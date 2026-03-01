@@ -1,9 +1,5 @@
 <link rel="stylesheet" href="/styles.css">
 
----
-title: Jeremiah Hackett, LCSW
----
-
 <div class="wrapper">
   <div class="card">
     <h1>Jeremiah Hackett, LCSW</h1>
@@ -19,5 +15,3 @@ Most of my clients aren't thrilled at the prospect of counseling initially. Almo
 
   </div>
 </div>
-
-<link rel="stylesheet" href="/styles.css">
