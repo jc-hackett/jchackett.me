@@ -11,6 +11,8 @@ I work with men in their twenties and thirties who are navigating life transitio
 My approach is practical and focused. I aim to be direct and authentic, while keeping your needs at the center of the work and maintaining unconditional positive regard.
 
 I draw from motivational interviewing, cognitive-behavioral, mindfulness, and narrative approaches. Grounded in a social work perspective, my work emphasizes collaboration and thoughtful reflection, and it takes seriously the social and cultural contexts that shape experience and change.
+
+
 <a href="/about/" class="doc-link">
   <div class="doc-title">About</div>
   <div class="doc-sub">Background and approach</div>
