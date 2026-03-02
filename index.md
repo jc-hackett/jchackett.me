@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="styles.css">
+---
+layout: base.njk
+title: Home
+
 --- 
 *Clinically Informed Consulting*
 
