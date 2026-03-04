@@ -52,32 +52,93 @@ hr,.blue-rule{
   margin:4rem 0;
 }
 
+/* generic button (used inside panel) */
 .btn{
   display:inline-block;
   background:#2f6df6;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding:.85rem 1.1rem;
   color:#fff;
   text-decoration:none;
-  border-radius:6px;
+  border-radius:10px;
+  border:2px solid rgba(31,78,216,.25);
   font-size:18px;
   font-family:inherit;
+  font-weight:600;
+  font-variant-caps:normal;
+  text-align:center;
+  line-height:1.1;
 }
 
-.btn:hover{
-  background:#2559d9;
+.btn:hover{background:#2559d9}
+
+/* Learn More: 3 buttons in columns, one shared panel below */
+.learn-more-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.25rem;
+  margin-top:1.5rem;
+  margin-bottom:1.25rem;
+}
+
+@media (max-width: 760px){
+  .learn-more-grid{grid-template-columns:1fr}
+}
+
+.learn-more-toggle{
+  appearance:none;
+  border:2px solid rgba(31,78,216,.25);
+  background:#2f6df6;
+  color:#fff;
+
+  border-radius:18px;
+  padding:1.35rem 1.25rem;
+
+  font:inherit;
+  font-size:1.65rem;
+  font-weight:700;
+  line-height:1.15;
+
+  cursor:pointer;
+  text-align:center;
+}
+
+.learn-more-toggle:hover{background:#2559d9}
+
+.learn-more-toggle[aria-expanded="true"]{
+  outline:0;
+  box-shadow:0 0 0 4px rgba(31,78,216,.20);
+}
+
+/* shared panel area */
+.learn-more-panels{
+  margin-top:.5rem;
+}
+
+.learn-more-panel{
+  display:none;
+  border:2px solid rgba(31,78,216,.25);
+  border-radius:18px;
+  padding:1.25rem 1.35rem 1.35rem;
+  background:rgba(255,255,255,.25);
+  text-align:left;
+}
+
+.learn-more-panel.is-active{display:block}
+
+.learn-more-panel p{
+  margin:.25rem 0 1rem;
 }
 
 a{color:inherit;text-underline-offset:3px}
 a:hover{opacity:.75}
 
-/* ===== Media ===== */
-.photo{margin:1.2rem 0}
-.photo img{max-width:100%;height:auto;border-radius:4px}
-.photo-credit{margin-top:6px;font-size:.8rem;color:var(--muted)}
-
 /* ===== Details / FAQ ===== */
 summary{list-style:none;cursor:pointer;margin:0;padding:0}
+summary::-webkit-details-marker{display:none}
+
+.faq-group{
+  display:block;
+}
 
 .faq-item{
   border:2px solid var(--blue);
@@ -106,17 +167,7 @@ summary{list-style:none;cursor:pointer;margin:0;padding:0}
   width:100%;
   margin:.75rem auto 1rem;
   border-radius:6px;
-}
-
-/* ===== Lists ===== */
-.insurance-list{
-  list-style:none;
-  padding:0;
-  margin:1rem 0;
-  columns:2;
-  column-gap:1rem;
-  font-size:smaller;
-}
+} 
 /* ===== Footer ===== */
 .site-footer{text-align:center;margin-top:3rem;opacity:.65}
 .site-footer p{font-size:20px}
