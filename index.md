@@ -21,93 +21,16 @@ Counseling gives us a chance to speak without hesitation or fear of recriminatio
 
 <p>I offer psychotherapy services in Maine and New York. My psychotherapy clients are mostly men, and many face legal problems. I contract with Headway to accept many major insurances.</p>
 
-<p>I also offer clinically-informed consulting services (or 'coaching') to tradesmen, creatives, and developers. </p>
+<p>I addition to traditional psychotherapy, I also offer clinically-informed consulting services (or 'coaching') to self-employed tradesmen, creatives, and developers. </p>
 
-<p>Check out the content below, and reach out if you want to start a conversation. Thanks for stopping by. While you're here, feel free to subscribe to my newsletter </p>
+<p>Click below to learn more. Reach out if you want to start a conversation. Thanks for stopping by.</p>
 
+<p>And before you go, drop your email to subscribe to my newsletter:</p>
 
-
-
-
-<details class="faq-group">
-  <summary>Learn More</summary>
-  
-  <details class="faq-item">
-    <summary>Cost & Insurance</summary>
-
-    <p>I contract with Headway to accept a variety of insurances:</p>
-
-    <ul class="insurance-list">
-      <li>Aetna</li>
-      <li>Anthem BC/BS</li>
-      <li>Cigna</li>
-      <li>Oscar</li>
-      <li>Oxford</li>
-      <li>Point32 Healthcare</li>
-      <li>United Healthcare</li>
-    </ul>
-
-    <p>
-      To verify your coverage and learn how Headway works,
-      <a href="https://care.headway.co/providers/jeremiah-hackett">click here</a>.
-    </p>
-  </details>
-
-  <details class="faq-item">
-    <summary>Psychotherapy vs Consulting?</summary>
-    <p>Coming Soon</p>
-  </details>
+<hr class="blue-rule">
 
 
-  <details class="faq-item">
-    <summary>My Policies</summary>
-    <p>Coming Soon</p>
-  </details>
+<!-- ===== Learn More Mount ===== -->
+{% include "components/learn_more.njk" %}
+<!-- ===== /Learn More Mount ===== -->
 
-
-<details class="faq-item">
-    <summary>About Me</summary>
-
-    <p>I grew up in rural Maine in the 1980s, balancing long bike rides and my Nintendo. I studied writing and philosophy as an undergraduate, and taught high school English and history.
-
-I earned my master’s in social work in 2012 and did clinical work in communities and residential settings in addition to supervising case managers. I entered private practice ten years ago.
-
-Four years ago, I decided to specialize in the psychological development and sociocultural demands of men.
-
-I still bike and game, though my tastes have evolved. I’m currently playing Hades 2.
-    </p>
-  </details>
-</details> 
-
-<!-- ===== Learn More Grid ===== -->
-<div class="learn-more-grid" data-learn-more>
-  <button class="learn-more-toggle" type="button" aria-expanded="false" aria-controls="lm-email" data-target="lm-email">
-    Email me
-  </button>
-
-  <button class="learn-more-toggle" type="button" aria-expanded="false" aria-controls="lm-message" data-target="lm-message">
-    Message me
-  </button>
-
-  <button class="learn-more-toggle" type="button" aria-expanded="false" aria-controls="lm-schedule" data-target="lm-schedule">
-    Schedule
-  </button>
-</div>
-
-<div class="learn-more-panels">
-  <div class="learn-more-panel" id="lm-email" role="region" aria-label="Email me">
-    <p>Questions, referrals, or availability.</p>
-    <a class="btn" href="mailto:YOUR_EMAIL@DOMAIN.COM">Send an email</a>
-  </div>
-
-  <div class="learn-more-panel" id="lm-message" role="region" aria-label="Message me">
-    <p>Short note or quick follow-up.</p>
-    <a class="btn" href="YOUR_MESSAGE_LINK">Open messages</a>
-  </div>
-
-  <div class="learn-more-panel" id="lm-schedule" role="region" aria-label="Schedule">
-    <p>Book a consult or session time.</p>
-    <a class="btn" href="YOUR_SCHEDULING_LINK">View calendar</a>
-  </div>
-</div>
-<!-- ===== /Learn More Grid ===== -->
