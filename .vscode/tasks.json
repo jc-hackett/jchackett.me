@@ -2,16 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Run Eleventy",
+      "type": "shell",
+      "command": "${workspaceFolder}\\run-eleventy.cmd",
+      "problemMatcher": []
+    },
+    {
       "label": "Rebuild Erasmus Kernel",
       "type": "shell",
-      "command": "scripts\\rebuild-kernel.cmd",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "presentation": {
-        "reveal": "never"
-      },
+      "command": "${workspaceFolder}\\scripts\\rebuild-kernel.cmd",
       "problemMatcher": []
     }
   ]
