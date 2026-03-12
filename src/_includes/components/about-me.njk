@@ -1,21 +1,32 @@
 <section class="disclosure-group" aria-label="About Me">
-
 <details>
-
-<summary class="disclosure-header">
-ABOUT ME
-</summary>
+<summary class="disclosure-header">ABOUT ME</summary>
 
 <div class="content-block">
+
+<div class="footer-card profile-card">
+
+<figure class="profile-figure">
+<img
+src="/images/jchackett.jpg"
+alt="Jeremiah Hackett"
+class="profile-photo"
+>
+
+<figcaption class="muted-note">
+Mooselookmeguntic, Rangeley. c. 2019. <br>Photo credit: AC Gillies
+</figcaption>
+</figure>
+
+</div>
 
 <details class="disclosure-item">
 <summary>My Story</summary>
 <div class="content-block">
 
-<hr class="rule dotted-blue-rule">
 
-<p>
-I grew up in rural Maine in the 1980s, splitting my time between long bike rides and my Nintendo. From an early age I knew I wanted to teach. I’ve always enjoyed helping people make sense of complicated ideas and turning difficult problems into something manageable.
+<hr class="rule dotted-blue-rule">
+  <p>I grew up in rural Maine in the 1980s, splitting my time between long bike rides and my Nintendo. From an early age I knew I wanted to teach. I’ve always enjoyed helping people make sense of complicated ideas and turning difficult problems into something manageable.
 </p>
 
 <p>
@@ -27,7 +38,7 @@ I earned my master’s in social work in 2012 and worked clinically in community
 </p>
 
 <p>
-Four years ago, I began focusing my work on the psychological development and sociocultural demands facing men.
+Four years ago, I began focusing my work on the psychological development and sociocultural demands facing men — particularly men in critical situations.
 </p>
 
 <p>
@@ -35,28 +46,53 @@ Outside of work, I still bike and play games, though my tastes have evolved. I h
 </p>
 
 <p>
-Lately I’ve been playing <em>Assault Android Cactus</em>.
-</p>
-
+Lately I’ve been playing <em>Assault Android Cactus</em>.</p>
 </div>
 </details>
+
 
 
 <details class="disclosure-item">
 <summary>Follow My Antics</summary>
 <div class="content-block">
+  
+<hr class="rule dotted-blue-rule">
 
-<p>
-Links, writing, or other online activity can go here.
-</p>
+<a class="button"
+   href="https://bsky.app/profile/jchackett.bsky.social"
+   target="_blank"
+   rel="noopener noreferrer">
+  Follow me on BlueSky
+</a>
 
+<hr class="rule dotted-blue-rule">
+
+<div class="newsletter-capture">
+  <p class="newsletter-intro">Subscribe to my newsletter:</p>
+
+  <form name="newsletter" method="POST" data-netlify="true" class="consult-form">
+    <input type="hidden" name="form-name" value="newsletter">
+
+    <p>
+      <input type="email" name="email" placeholder="Your Email (required)" required>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" name="newsletter" checked>
+        Please subscribe me to updates.
+      </label>
+    </p>
+
+    <p>
+      <button type="submit" class="button">SEND</button>
+    </p>
+  </form>
+</div>
+
+<div class="newsletter-success" hidden>
+  <p>Thank you. You're subscribed.</p>
+</div>
 </div>
 </details>
-
-<hr class="blue-rule">
-
-</div>
-
-</details>
-
 </section>

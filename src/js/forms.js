@@ -73,7 +73,7 @@ function loadCalEmbed() {
 
 /* ===== Consulting Form: Inline Success State ===== */
 (function consultFormController() {
-  const form = document.querySelector(".consult-form");
+const form = document.querySelector('form[name="consultation"]');
   const capture = document.querySelector(".consult-capture");
   const success = document.querySelector(".consult-success");
   const intro = document.querySelector(".consult-intro");
@@ -96,3 +96,17 @@ function loadCalEmbed() {
     loadCalEmbed();
   });
 })(); 
+
+(function newsletterFormController() {
+  const form = document.querySelector('form[name="newsletter"]');
+  const capture = document.querySelector(".newsletter-capture");
+  const success = document.querySelector(".newsletter-success");
+
+  if (!form || !capture || !success) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    capture.style.display = "none";
+    success.hidden = false;
+  });
+})();
