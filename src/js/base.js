@@ -1,6 +1,18 @@
 /* ===== Boot / Diagnostics ===== */
 console.log("JS loaded");
 
+/* ===== Schedule Consultation Button ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const scheduleLink = document.querySelector("#schedule-consultation");
+  const contactDetails = document.querySelector("#contact-me");
+
+  if (!scheduleLink || !contactDetails) return;
+
+  scheduleLink.addEventListener("click", function () {
+    contactDetails.open = true;
+  });
+});
+
 /* ===== Menu Controller ===== */
 (function menuController() {
   const options = Array.from(document.querySelectorAll(".menu-option"));
@@ -21,24 +33,6 @@ console.log("JS loaded");
       panel.hidden = !isActive;
     });
   }
-
-  const card = document.querySelector('.card');
-const hour = new Date().getHours();
-
-let x = 0;
-let y = 12;
-
-if (hour < 12) {
-  x = -10;  // morning light from left
-}
-else if (hour < 17) {
-  x = 0;    // midday overhead
-}
-else {
-  x = 10;   // evening light from right
-}
-
-card.style.boxShadow = `${x}px ${y}px 28px rgba(0,0,0,0.18)`;
 
   options.forEach((option, index) => {
     option.addEventListener("click", function () {
@@ -64,32 +58,10 @@ card.style.boxShadow = `${x}px ${y}px 28px rgba(0,0,0,0.18)`;
 
   panels.forEach((panel, index) => {
     panel.hidden = !panel.classList.contains("active");
+
     if (panel.classList.contains("active")) {
       options[index]?.classList.add("active");
       options[index]?.setAttribute("aria-selected", "true");
     }
-  });
-})();
-
-/* ===== Consulting Form: Inline Success State ===== */
-(function consultFormController() {
-  const form = document.querySelector(".consult-form");
-  const capture = document.querySelector(".consult-capture");
-  const success = document.querySelector(".consult-success");
-
-  if (!form || !capture || !success) return;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    capture.style.display = "none";
-    success.hidden = false;
-
-    requestAnimationFrame(() => {
-      success.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
   });
 })();

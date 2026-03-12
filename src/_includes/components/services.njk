@@ -1,19 +1,65 @@
-{# ===== Component: Services ===== #}
+<section class="disclosure-group" aria-label="Services">
 
-{% set items = [
-  {
-    title: "Individual Counseling",
-    content: "<p>I work with college students and young professionals, often around relationships, behavior, thoughts, and moods.</p>"
-  },
-  {
-    title: "Clinical Consultation",
-    content: "<p>Consultation details can live here while this section is being developed.</p>"
-  }
-] %}
+<details>
 
-{% set title = "Services" %}
-{% set ariaLabel = "Services" %}
+<summary class="disclosure-header">
+MY SERVICES
+</summary>
 
-{% include "components/disclosure-group.njk" %}
+<div class="content-block">
 
-{# ===== /Component: Services ===== #}
+<p>
+I offer psychotherapy services in Maine & New York, and I offer clinical social work (coaching) services worldwide. 
+</p>
+
+<details class="disclosure-item">
+<summary>PSYCHOTHERAPY</summary>
+<div class="content-block">
+<p>
+Talk therapy is the process of making our thoughts, behaviors, and moods the subject of close examination. At the heart of this process is the <em>compassionate interview</em> — a unique process in which individuals are free to safely examine (and dismantle) their resistance to change.
+
+I contract with Headway to accept the following insurances:
+        <ul class="insurance-list">
+          <li>Aetna</li>
+          <li>Anthem BC/BS</li>
+          <li>Cigna</li>
+          <li>Oscar</li>
+          <li>Oxford</li>
+          <li>Point32 Healthcare</li>
+          <li>United Healthcare</li>
+        </ul>
+Want to see if I take your insurance? Begin that process over on Headway.
+<a class="button"
+   href="https://care.headway.co/providers/jeremiah-hackett"
+   target="_blank"
+   rel="noopener noreferrer">
+  CHECK INSURANCE ↗️
+</a>
+
+<a href="#contact-me" class="button" id="schedule-consultation">
+  CONTACT ME
+</a>
+</div>
+</details>
+
+
+
+<details class="disclosure-item">
+<summary>CONSULTING</summary>
+
+<div class="content-block">
+<p>
+Consulting details here.
+</p>
+</div>
+
+
+
+</details>
+<hr class="blue-rule">
+
+</div>
+
+</details>
+
+</section>

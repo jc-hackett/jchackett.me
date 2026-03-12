@@ -1,5 +1,26 @@
 /* ===== Disclosure Component ===== */
 
+/* top-level disclosure trigger */
+.disclosure-header {
+  display: block;
+  width: 100%;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  cursor: pointer;
+
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  box-shadow: 5px 10px 14px rgba(0,0,0,0.30);
+}
+
+.disclosure-group > details[open] .content-block {
+  padding: 1.5rem 0.25rem 0 0.25rem;
+}
+
 /* hide default disclosure arrows */
 summary {
   list-style: none;
@@ -15,24 +36,30 @@ summary::-webkit-details-marker {
   margin-top: 2rem;
 }
 
+.disclosure-item {
+  background: #ffffff;
+  border: 1px solid rgba(31,78,216,0.12);
+  border-radius: 6px;
+
+  padding: 1.25rem;
+  margin-top: 1.2rem;
+
+  box-shadow:
+    0 0 0 3px rgba(31,78,216,0.03),
+    0 8px 18px rgba(31,78,216,0.12);
+}
+
 /* top-level disclosure trigger */
 .disclosure-header {
   display: block;
-  border: 2px solid blue;
-  border-radius: 8px;
+  
   padding: 1rem;
   text-align: center;
   cursor: pointer;
   margin-bottom: 1rem;
 }
 
-/* disclosure items */
-.disclosure-item {
-  border: 2px dotted blue;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1rem;
-}
+
 
 /* nested disclosure trigger */
 .disclosure-item > summary {
@@ -45,4 +72,94 @@ summary::-webkit-details-marker {
   border-bottom: 2px dotted blue;
   padding-bottom: 0.5rem;
   margin-bottom: 0.75rem;
+  transition: margin-bottom 140ms ease;
+}
+
+/* disclosure motion */
+.disclosure-item .content-block {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.disclosure-item[open] .content-block {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ===== Get Started Form Fields ===== */
+
+.consult-form input[type="email"],
+.consult-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  border: 2px dotted var(--blue);
+  border-radius: 0;
+  background: #fff;
+
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.consult-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.consult-form input[type="email"]:focus,
+.consult-form textarea:focus {
+  border-color: var(--blue);
+  box-shadow: none;
+}
+
+/* ===== Custom Checkbox ===== */
+
+.consult-form input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.6rem;
+
+  border: 2px dotted var(--blue);
+  border-radius: 0;
+  background: #fff;
+
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+
+  position: relative;
+  vertical-align: -5px;
+  cursor: pointer;
+}
+
+.consult-form input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 0.95rem;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+
+#my-cal-inline-consultation {
+  width: 100%;
+  min-height: 700px;
 }

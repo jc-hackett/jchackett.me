@@ -2,7 +2,7 @@
 module.exports = function (eleventyConfig) {
   /* ===== Passthrough Copies ===== */
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
-  eleventyConfig.addPassthroughCopy({ "src/script.js": "script.js" });
+eleventyConfig.addPassthroughCopy({ "src/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 
   /* ===== Ignore Non-Site Files ===== */
