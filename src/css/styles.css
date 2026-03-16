@@ -56,13 +56,14 @@ body {
 
 /* footer card spacing */
 .footer-card {
-  padding: 1.5rem 2rem;
+  padding: 0rem 2rem;
   text-align: center;
   max-width: 520px;
 }
 
 .footer-card p {
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 /* ===== Typography ===== */
@@ -199,11 +200,28 @@ button.button:active {
 /* ===== Profile Image ===== */
 .profile-photo {
   display: block;
-  width: 300px;
-  margin: 1.5rem auto;
-  object-fit: cover;
+  width: 420px;
+  max-width: 100%;
+  margin: 1rem auto;
 }
 
+.photo-caption-card {
+  max-width: 340px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.6rem 0.9rem;
+  text-align: center;
+}
+
+.photo-caption-card p {
+  margin: 0.15rem 0;
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+}
+
+.photo-caption-card p:last-child {
+  margin-bottom: 0;
+}
 /* ===== Footer ===== */
 .site-footer {
   display: flex;

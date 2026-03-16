@@ -21,6 +21,7 @@
   padding: 0
 }
 
+
 .disclosure-group > details[open] > summary {
   background: var(--ink);
   color: #ffffff;
