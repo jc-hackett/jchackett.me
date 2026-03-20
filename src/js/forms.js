@@ -114,7 +114,11 @@ async function postNetlifyForm(data) {
           message
         });
       } else {
-        await postNetlifyForm(new FormData(form));
+        await postNetlifyForm({
+          "form-name": "consultation",
+          email,
+          message
+        });
       }
 
       if (intro) intro.style.display = "none";
