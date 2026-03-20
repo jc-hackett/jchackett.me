@@ -99,17 +99,22 @@ async function postNetlifyForm(data) {
     e.preventDefault();
 
     try {
-      await postNetlifyForm(new FormData(form));
-
       const wantsNewsletter = form.querySelector('input[name="newsletter"]')?.checked;
       const email = form.querySelector('input[name="email"]')?.value?.trim();
+      const message = form.querySelector('textarea[name="message"]')?.value?.trim() || "";
+
+      if (!email) throw new Error("Email is required");
 
       if (wantsNewsletter && email) {
         await postNetlifyForm({
           "form-name": "newsletter",
           email,
-          newsletter: "on"
+          newsletter: "on",
+          source: "consultation",
+          message
         });
+      } else {
+        await postNetlifyForm(new FormData(form));
       }
 
       if (intro) intro.style.display = "none";
