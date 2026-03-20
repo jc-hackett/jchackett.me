@@ -62,6 +62,16 @@ function encodeForm(form) {
   return new URLSearchParams(new FormData(form)).toString();
 }
 
+async function postNetlifyForm(data) {
+  const res = await fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString()
+  });
+
+  if (!res.ok) throw new Error("Netlify form submission failed");
+}
+
 /* ===== Get Started Form Reveal ===== */
 (function getStartedReveal() {
   const button = document.querySelector("#get-started-btn");
@@ -89,13 +99,18 @@ function encodeForm(form) {
     e.preventDefault();
 
     try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeForm(form)
-      });
+      await postNetlifyForm(new FormData(form));
 
-      if (!res.ok) throw new Error("Consultation form submission failed");
+      const wantsNewsletter = form.querySelector('input[name="newsletter"]')?.checked;
+      const email = form.querySelector('input[name="email"]')?.value?.trim();
+
+      if (wantsNewsletter && email) {
+        await postNetlifyForm({
+          "form-name": "newsletter",
+          email,
+          newsletter: "on"
+        });
+      }
 
       if (intro) intro.style.display = "none";
 
@@ -125,13 +140,7 @@ function encodeForm(form) {
     e.preventDefault();
 
     try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeForm(form)
-      });
-
-      if (!res.ok) throw new Error("Newsletter form submission failed");
+      await postNetlifyForm(new FormData(form));
 
       capture.style.display = "none";
       success.hidden = false;
