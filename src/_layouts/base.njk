@@ -9,6 +9,9 @@
 
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/components/disclosure.css">
+{% if page.url == "/" %}
+<link rel="stylesheet" href="/css/components/homepage.css">
+{% endif %}
 <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,6 +21,12 @@
 <body>
   <div class="wrapper">
     <main class="card">
+      {% if page.url != "/" %}
+      <a class="back-home" href="/" aria-label="Back to home">
+        <span aria-hidden="true">&larr;</span>
+        <span>Home</span>
+      </a>
+      {% endif %}
       <h1 class="site-title">{{ title }}</h1>
       {{ content | safe }}
     </main>
@@ -37,7 +46,25 @@
 </footer>
   </div>
 
+<form name="consultation" method="POST" action="/" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="consultation">
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+  <input type="checkbox" name="subscribe-newsletter">
+</form>
+
+<form name="newsletter" method="POST" action="/" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
+  <input type="email" name="email">
+  <input type="checkbox" name="subscribe-newsletter">
+  <input type="text" name="source">
+  <textarea name="message"></textarea>
+</form>
+
 <script defer src="/js/base.js"></script>
 <script defer src="/js/disclosures.js"></script>
+{% if page.url == "/" %}
+<script defer src="/js/homepage.js"></script>
+{% endif %}
 <script defer src="/js/forms.js"></script></body>
 </html>

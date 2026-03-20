@@ -58,6 +58,20 @@ function loadCalEmbed() {
   }, 200);
 }
 
+function encodeForm(form) {
+  return new URLSearchParams(new FormData(form)).toString();
+}
+
+async function postNetlifyForm(data) {
+  const res = await fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString()
+  });
+
+  if (!res.ok) throw new Error("Netlify form submission failed");
+}
+
 /* ===== Get Started Form Reveal ===== */
 (function getStartedReveal() {
   const button = document.querySelector("#get-started-btn");
@@ -73,7 +87,7 @@ function loadCalEmbed() {
 
 /* ===== Consulting Form: Inline Success State ===== */
 (function consultFormController() {
-const form = document.querySelector('form[name="consultation"]');
+  const form = document.querySelector('form[name="consultation"]');
   const capture = document.querySelector(".consult-capture");
   const success = document.querySelector(".consult-success");
   const intro = document.querySelector(".consult-intro");
@@ -81,21 +95,44 @@ const form = document.querySelector('form[name="consultation"]');
 
   if (!form || !capture || !success) return;
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    if (intro) intro.style.display = "none";
+    try {
+      const wantsNewsletter = form.querySelector('input[name="subscribe-newsletter"]')?.checked;
+      const email = form.querySelector('input[name="email"]')?.value?.trim();
+      const message = form.querySelector('textarea[name="message"]')?.value?.trim() || "";
 
-    capture.hidden = true;
-    success.hidden = false;
+      if (!email) throw new Error("Email is required");
 
-    if (header) {
-      header.textContent = "SCHEDULE A CONSULT";
+      if (wantsNewsletter && email) {
+        await postNetlifyForm({
+          "form-name": "newsletter",
+          email,
+          subscribe: "on",
+          source: "consultation",
+          message
+        });
+      } else {
+        await postNetlifyForm(new FormData(form));
+      }
+
+      if (intro) intro.style.display = "none";
+
+      capture.hidden = true;
+      success.hidden = false;
+
+      if (header) {
+        header.textContent = "SCHEDULE A CONSULT";
+      }
+
+      loadCalEmbed();
+    } catch (err) {
+      console.error(err);
+      window.alert("There was a problem sending your message. Please try again.");
     }
-
-    loadCalEmbed();
   });
-})(); 
+})();
 
 (function newsletterFormController() {
   const form = document.querySelector('form[name="newsletter"]');
@@ -104,9 +141,17 @@ const form = document.querySelector('form[name="consultation"]');
 
   if (!form || !capture || !success) return;
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    capture.style.display = "none";
-    success.hidden = false;
+
+    try {
+      await postNetlifyForm(new FormData(form));
+
+      capture.style.display = "none";
+      success.hidden = false;
+    } catch (err) {
+      console.error(err);
+      window.alert("There was a problem subscribing. Please try again.");
+    }
   });
 })();
