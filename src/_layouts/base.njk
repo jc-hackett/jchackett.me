@@ -22,18 +22,18 @@
   <div class="wrapper">
     <main class="card">
       {% if page.url != "/" %}
-      <a class="back-home" href="/" aria-label="Back to home">
+      <a class="back-home" href="{{ backLinkHref or '/' }}" aria-label="{{ backLinkAriaLabel or 'Back to home' }}">
         <span aria-hidden="true">&larr;</span>
-        <span>Home</span>
+        <span>{{ backLinkLabel or 'Home' }}</span>
       </a>
       {% endif %}
+      {% if showPageTitle != false %}
       <h1 class="site-title{% if page.url == '/' %} home-title{% endif %}">{{ title }}</h1>
+      {% endif %}
       {{ content | safe }}
     </main>
 
-
-
-
+    {% if page.url == "/" %}
     <footer class="site-footer">
   <div class="footer-card">
     <p>© 2026 Jeremiah Hackett. All rights reserved.</p>
@@ -44,6 +44,7 @@
     </p>
   </div>
 </footer>
+    {% endif %}
   </div>
 
 <form name="consultation" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" hidden>

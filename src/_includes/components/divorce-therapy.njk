@@ -1,6 +1,9 @@
-<section class="disclosure-group" aria-label="Divorce & Separation Support">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="Divorce & Separation Support">
+{% if showHeader %}
 <details>
 <summary class="disclosure-header">HIGH CONFLICT DIVORCE</summary>
+{% endif %}
 <div class="content-block">
 <hr class="rule dotted-blue-rule">
 <p>High-conflict divorce can feel relentless—arguments that don’t settle, decisions that carry legal weight, and a constant pull between anger, fear, and the need to stay composed. It’s common to feel overwhelmed or on edge, especially when communication keeps breaking down and the stakes involve children, finances, or your sense of stability. 
@@ -15,5 +18,7 @@ The work is to create enough steadiness to think clearly, set (and follow) firm 
 
 
 </div>
+{% if showHeader %}
 </details>
+{% endif %}
 </section>

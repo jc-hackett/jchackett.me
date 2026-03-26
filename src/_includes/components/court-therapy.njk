@@ -1,6 +1,9 @@
-<section class="disclosure-group" aria-label="Court-Involved / Documentation Services">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="Court-Involved / Documentation Services">
+{% if showHeader %}
 <details>
 <summary class="disclosure-header">LEGAL ISSUES</summary>
+{% endif %}
 <div class="content-block">
 <hr class="rule dotted-blue-rule">
 <p>Legal involvement often follows specific events—DUIs, domestic violence incidents, custody disputes, or behavior that has escalated to the point of court attention. Once that process begins, things tend to move quickly: deadlines, documentation, and decisions that carry real consequences. It’s common to feel pressured, uncertain, or reactive as it unfolds.
@@ -15,5 +18,7 @@ The focus is on creating enough clarity to understand where you stand, what’s 
 <hr class="rule dotted-blue-rule">
 </a>
 </div>
+{% if showHeader %}
 </details>
+{% endif %}
 </section>

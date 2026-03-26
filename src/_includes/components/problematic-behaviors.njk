@@ -1,6 +1,9 @@
-<section class="disclosure-group" aria-label="Gambling & Behavioral Control">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="Gambling & Behavioral Control">
+{% if showHeader %}
 <details>
 <summary class="disclosure-header">PROBLEMATIC BEHAVIORS</summary>
+{% endif %}
 <div class="content-block">
 <hr class="rule dotted-blue-rule">
 <p>Problematic behavior usually starts as a way to manage pressure, boredom, or emotional discomfort, then becomes harder to control over time. For many men, that can look like gambling, compulsive sexual behavior, impulsive spending, substance use, angry outbursts, or repeated decisions that damage trust at home and stability at work. It is common to feel caught between short-term relief and longer-term fallout.
@@ -13,5 +16,7 @@ The work is direct and structured: identify the pattern, map triggers, build int
 
 <hr class="rule dotted-blue-rule">
 </div>
+{% if showHeader %}
 </details>
+{% endif %}
 </section>

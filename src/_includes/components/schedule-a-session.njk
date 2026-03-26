@@ -1,0 +1,25 @@
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}"{% if not showHeader %} id="schedule-a-session"{% endif %} aria-label="Get Started">
+  {% if showHeader %}
+  <details id="schedule-a-session"{% if openComponentTitle == true %} open{% endif %}>
+    <summary class="disclosure-header">
+      SESSION SCHEDULER
+    </summary>
+  {% endif %}
+
+    <div class="content-block">
+      <p class="consult-intro">
+
+</p>
+
+      <div id="my-cal-inline-session"></div>
+
+      <p>
+        Error? <a href="https://cal.com/jchackett/psychotherapy-session" target="_blank" rel="noopener noreferrer">Open the booking page directly</a>.
+      </p>
+
+    </div>
+  {% if showHeader %}
+  </details>
+  {% endif %}
+</section>

@@ -1,6 +1,9 @@
-<section class="disclosure-group" aria-label="About Me">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="About Me">
+{% if showHeader %}
 <details>
 <summary class="disclosure-header">ABOUT ME</summary>
+{% endif %}
 
 <div class="content-block">
 
@@ -27,19 +30,21 @@ Mooselookmeguntic, Rangeley. c. 2019. <br>Photo credit: AC Gillies
 
 <hr class="rule dotted-blue-rule">
 
-<p> I grew up in rural Maine in the 1980s, splitting my time between long bike rides and my Nintendo. I knew from a young age that I wanted to be a teacher.
+<p> I grew up in rural Maine in the 1980s, splitting my time between long bike rides, my books, and my Nintendo. From a young age I wanted to be a teacher.
 </p>
 
 <p>
-My undergraduate degree was in writing and philosophy, and in my late 20s I was a high school English and history and history teacher in Pittsfield, Maine.
+My undergraduate degree was in writing and philosophy, and in my late 20's I taught English and history in Pittsfield, Maine.
 
-I loved being a teacher, and when I went into social work I committed to practicing through an educational lens. I take a lot of heart in a line from my personal hero, Carl Rogers:
+I loved being a teacher, but I didn't love giving grades. My favorite part of teaching was mentoring kids, being a coach and a dorm parent, and talking freely with students before and after class. 
+
+At 30, I pivoted to social work and went to graduate school. 
+
+Throughout grad school, I examined the overlaps between education and social work. I have always practiced therapy with an educational lens. One of my intellectual idols, Carl Rogers, said
 
 > “The person who is educated is the one who has learned how to learn and change.”
 
-I also gravitated toward the existential therapy of Irvin Yalom, which was very much in fashion at the time, and still is.
-
-In my ten years of experience, I have worked with individuals, couples, and families—in person, in residential settings, online, and in people’s homes. I have also managed case managers.
+In my ten years of experience, I have worked with individuals, couples, and families. I have worked in an office, in residential settings, in people’s homes and now online. In addition to being a counselor, I also managed a team of case managers.
 
 Three years ago, I decided to work with men (and their families) exclusively. I write about this decision (and this professional focus) in my newsletter, _Field Notes_, which you can subscribe to below.
 
@@ -107,5 +112,7 @@ Please subscribe me to updates.
 </details>
 
 </div>
+{% if showHeader %}
 </details>
+{% endif %}
 </section>

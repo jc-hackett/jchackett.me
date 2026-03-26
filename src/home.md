@@ -27,3 +27,7 @@ It can help bring us relief.</p></div>
 {% include "components/about-me.njk" %}
 
 {% include "components/contact-me.njk" %}
+<br>
+<hr class="rule dotted-blue-rule">
+<br>
+{% include "components/schedule-a-session.njk" %}

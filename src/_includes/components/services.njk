@@ -1,10 +1,13 @@
-<section class="disclosure-group" aria-label="Services">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="Services">
 
+{% if showHeader %}
 <details>
 
 <summary class="disclosure-header">
 MY SERVICES
 </summary>
+{% endif %}
 
 <div class="content-block">
 
@@ -15,11 +18,9 @@ MY SERVICES
 
 <p>I offer talk therapy to individuals who have received a psychiatric diagnosis and are responding to a significant incident in life. My clients are often facing education disruption, high conflict divorce, legal issues, or a financial crisis that is often driven by problematic behaviors.</p>
 
-<a class="button services-learn-more" href="/therapy-for-men-nyc/">Learn More</a>
-
 <hr class="rule dotted-blue-rule">
 
-<p>Want to start the conversation?</p>
+<p>Want to start the conversation? I offer free consultations</p>
 <a href="#contact-me" class="button" id="schedule-consultation">
   Message Me
 </a>
@@ -40,8 +41,6 @@ While some are looking to use thoughtful discourse to better organize their thin
 
 Consulting differs from psychotherapy in a few key ways:
 
-Consulting differs from psychotherapy in a few key ways:
-
 * They follow different ethical standards.
 * Consulting is non-clinical, with simpler documentation and no insurance billing.
 * The focus is on professional and interpersonal goals first; behavior change and symptom reduction are secondary.
@@ -52,7 +51,7 @@ Consulting differs from psychotherapy in a few key ways:
 
 <hr class="rule dotted-blue-rule">
 
-<p>Want to see if this service is right for you?</p>
+<p>Want to see if this service is right for you? Schedule a free consultation.</p>
 <a href="#contact-me" class="button" id="schedule-consultation">
   Message Me
 </a>
@@ -64,6 +63,8 @@ Consulting differs from psychotherapy in a few key ways:
 </details>
 </div>
 
+{% if showHeader %}
 </details>
+{% endif %}
 
 </section>

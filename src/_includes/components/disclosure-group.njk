@@ -1,8 +1,11 @@
 {# ===== Component: Disclosure Group ===== #}
 
-<section class="disclosure-group" aria-label="{{ ariaLabel or title }}">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="{{ ariaLabel or title }}">
+  {% if showHeader %}
   <details>
     <summary class="disclosure-header">{{ title }}</summary>
+  {% endif %}
 
     {% for item in items %}
       <details class="disclosure-item">
@@ -13,7 +16,9 @@
         </div>
       </details>
     {% endfor %}
+  {% if showHeader %}
   </details>
+  {% endif %}
 </section>
 
 {# ===== /Component: Disclosure Group ===== #}

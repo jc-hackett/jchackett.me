@@ -57,6 +57,10 @@ summary::-webkit-details-marker {
   margin-top: 2rem;
 }
 
+.disclosure-group-plain > .content-block {
+  padding: 0;
+}
+
 .disclosure-item {
   background: #ffffff;
   border: 1px solid rgba(0,0,0,0.14);
@@ -205,7 +209,8 @@ summary::-webkit-details-marker {
 }
 
 
-#my-cal-inline-consultation {
+#my-cal-inline-consultation,
+#my-cal-inline-session {
   width: 100%;
   min-height: 700px;
 }

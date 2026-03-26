@@ -1,5 +1,6 @@
-function loadCalEmbed() {
-  const target = document.querySelector("#my-cal-inline-consultation");
+function loadCalEmbed(options) {
+  const { selector, namespace, calLink } = options;
+  const target = document.querySelector(selector);
   if (!target || target.dataset.loaded === "true") return;
 
   target.dataset.loaded = "true";
@@ -40,22 +41,36 @@ function loadCalEmbed() {
   })(window, "https://app.cal.com/embed/embed.js", "init");
 
   setTimeout(() => {
-    Cal("init", "consultation", { origin: "https://app.cal.com" });
+    Cal("init", namespace, { origin: "https://app.cal.com" });
 
-    Cal.ns.consultation("inline", {
-      elementOrSelector: "#my-cal-inline-consultation",
+    Cal.ns[namespace]("inline", {
+      elementOrSelector: selector,
       config: {
         layout: "month_view",
         useSlotsViewOnSmallScreen: true
       },
-      calLink: "jchackett/consultation"
+      calLink
     });
 
-    Cal.ns.consultation("ui", {
+    Cal.ns[namespace]("ui", {
       hideEventTypeDetails: false,
       layout: "month_view"
     });
   }, 200);
+}
+
+function keepDetailsSummaryInView(details) {
+  const summary = details?.querySelector(":scope > summary");
+  if (!summary) return;
+
+  const scrollSummaryToTop = () => {
+    const top = summary.getBoundingClientRect().top + window.scrollY - 18;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  scrollSummaryToTop();
+  window.setTimeout(scrollSummaryToTop, 350);
+  window.setTimeout(scrollSummaryToTop, 1200);
 }
 
 function encodeForm(form) {
@@ -129,11 +144,41 @@ async function postNetlifyForm(data) {
         header.textContent = "SCHEDULE A CONSULT";
       }
 
-      loadCalEmbed();
+      loadCalEmbed({
+        selector: "#my-cal-inline-consultation",
+        namespace: "consultation",
+        calLink: "jchackett/consultation"
+      });
     } catch (err) {
       console.error(err);
       window.alert("There was a problem sending your message. Please try again.");
     }
+  });
+})();
+
+(function schedulePageController() {
+  const details = document.querySelector("#schedule-a-session");
+  const options = {
+    selector: "#my-cal-inline-session",
+    namespace: "psychotherapySession",
+    calLink: "jchackett/psychotherapy-session"
+  };
+
+  if (!details || details.tagName !== "DETAILS") {
+    loadCalEmbed(options);
+    return;
+  }
+
+  if (details.open) {
+    loadCalEmbed(options);
+    return;
+  }
+
+  details.addEventListener("toggle", function () {
+    if (!details.open) return;
+
+    loadCalEmbed(options);
+    keepDetailsSummaryInView(details);
   });
 })();
 

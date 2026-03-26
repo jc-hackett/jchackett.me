@@ -1,8 +1,11 @@
-<section class="disclosure-group" aria-label="Get Started">
+{% set showHeader = showComponentTitle != false %}
+<section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}"{% if not showHeader %} id="contact-me"{% endif %} aria-label="Get Started">
+  {% if showHeader %}
   <details id="contact-me">
     <summary class="disclosure-header">
       CONTACT ME
     </summary>
+  {% endif %}
 
     <div class="content-block">
       
@@ -54,5 +57,7 @@ Drop me an email using the form below. I'll respond to you in 24 hours.
 </div>
 
     </div>
+  {% if showHeader %}
   </details>
+  {% endif %}
 </section>
