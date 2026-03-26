@@ -18,7 +18,7 @@ I work with college-aged men and young professionals. My clients are typically c
 Talking really can help.
 </p>
 <p>
-Speaking without the fear of recrimination to a compassionate, interested listener is a timeless process. It helps us see and think differently. It disrupts rigid and uncharitable ways of thinking. 
+Speaking without censorship to a compassionate, interested listener is a timeless process. It helps us see and think differently. It disrupts rigid and uncharitable ways of thinking. 
 
 It can help bring us relief.</p></div>
 <hr class="blue-rule" id="services-reset">

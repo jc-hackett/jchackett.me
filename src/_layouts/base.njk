@@ -27,7 +27,7 @@
         <span>Home</span>
       </a>
       {% endif %}
-      <h1 class="site-title">{{ title }}</h1>
+      <h1 class="site-title{% if page.url == '/' %} home-title{% endif %}">{{ title }}</h1>
       {{ content | safe }}
     </main>
 
