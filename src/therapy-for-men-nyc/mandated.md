@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Mandated to Therapy?
+title: When Therapy is a Good Idea
 permalink: /therapy-for-men-nyc/
 ---
 
