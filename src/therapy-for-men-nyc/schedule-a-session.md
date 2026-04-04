@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Schedule a Session
+showPageTitle: false
 openComponentTitle: true
 ---
 

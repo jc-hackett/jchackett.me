@@ -1,9 +1,9 @@
 {% set showHeader = showComponentTitle != false %}
 <section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}"{% if not showHeader %} id="contact-me"{% endif %} aria-label="Get Started">
   {% if showHeader %}
-  <details id="contact-me">
+  <details id="contact-me"{% if openComponentTitle == true %} open{% endif %}>
     <summary class="disclosure-header">
-      CONTACT ME
+      Message Me
     </summary>
   {% endif %}
 

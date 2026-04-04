@@ -3,7 +3,7 @@
 {% set showHeader = showComponentTitle != false %}
 <section class="disclosure-group{% if not showHeader %} disclosure-group-plain{% endif %}" aria-label="{{ ariaLabel or title }}">
   {% if showHeader %}
-  <details>
+  <details{% if openComponentTitle == true %} open{% endif %}>
     <summary class="disclosure-header">{{ title }}</summary>
   {% endif %}
 

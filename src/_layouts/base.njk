@@ -16,12 +16,33 @@
     gtag('config', 'G-5GCWW0Y848');
   </script>
 
+  <script>
+    window.Hyphenopoly = {
+      require: {
+        "en-us": "FORCEHYPHENOPOLY"
+      },
+      paths: {
+        maindir: "https://cdn.jsdelivr.net/npm/hyphenopoly@6.0.0/",
+        patterndir: "https://cdn.jsdelivr.net/npm/hyphenopoly@6.0.0/patterns/"
+      },
+      setup: {
+        selectors: {
+          "p": {},
+          "li": {}
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/hyphenopoly@6.0.0/Hyphenopoly_Loader.js"></script>
+
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/components/disclosure.css">
 {% if page.url == "/" %}
 <link rel="stylesheet" href="/css/components/homepage.css">
 {% endif %}
 <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" />
@@ -30,25 +51,34 @@
 <body>
   <div class="wrapper">
     <main class="card">
-      {% if page.url != "/" %}
-      <a class="back-home" href="{{ backLinkHref or '/' }}" aria-label="{{ backLinkAriaLabel or 'Back to home' }}">
-        <span aria-hidden="true">&larr;</span>
-        <span>{{ backLinkLabel or 'Home' }}</span>
-      </a>
-      {% endif %}
       {% if showPageTitle != false %}
-      <h1 class="site-title{% if page.url == '/' %} home-title{% endif %}">{{ title }}</h1>
+      <h1 class="site-title{% if page.url == '/' %} home-title{% endif %}">
+        {% if page.url == "/" %}
+        <span class="home-name">{{ title }}</span>
+        {% else %}
+        {{ title }}
+        {% endif %}
+        {% if page.url == "/" and homeTagline %}
+        <span class="home-tagline">{{ homeTagline }}</span>
+        {% endif %}
+      </h1>
       {% endif %}
       {{ content | safe }}
+
+      {% if page.url != "/" and showBackLink != false %}
+      <footer class="page-footer">
+        <a class="back-home" href="{{ backLinkHref or '/' }}" aria-label="{{ backLinkAriaLabel or 'Back to home' }}">
+          <span aria-hidden="true">&larr;</span>
+          <span>{{ backLinkLabel or 'Home' }}</span>
+        </a>
+      </footer>
+      {% endif %}
     </main>
 
     {% if page.url == "/" %}
     <footer class="site-footer">
 <div class="footer-card">
-  <p>© 2026 Jeremiah Hackett. All rights reserved.</p>
-  <p>
-    This site was crafted using ChatGPT 5.2 & GitHub Copilot<br>
-    It runs on <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>
+  <p>This is the personal website for Jeremiah Hackett.</p><p>It runs on <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>
     and <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.<br>
     Source available on <a href="https://github.com/jc-hackett" target="_blank" rel="noopener noreferrer">GitHub</a>.
   </p>

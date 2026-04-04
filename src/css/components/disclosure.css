@@ -84,6 +84,13 @@ summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
+.disclosure-header,
+.disclosure-item > summary {
+  font-family: var(--journal-font);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
 /* ===== Open Disclosure Header ===== */
 
 .disclosure-group > details[open] > summary {
@@ -98,9 +105,9 @@ summary::-webkit-details-marker {
   font-family: var(--journal-font);
   font-variant-caps: normal;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: -0.01em;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 650;
   color: var(--brand-blue);
 }
 

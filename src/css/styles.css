@@ -1,12 +1,12 @@
 /* ===== Variables / Base ===== */
 :root {
   --paper: #ffffff;
-  --ink: #1f1e1c;
+  --ink: #141414;
   --rule: #d8d2c7;
   --blue: #1f1e1c;
   --brand-blue: #1f1e1c;
   --brand-blue-hover: #0f0f0f;
-  --journal-font: "Linux Libertine", "Source Serif 4", "EB Garamond", Georgia, serif;
+  --journal-font: Corpid, CorpidOffice, "Nunito Sans", "Fira Sans", "Frutiger LT 55 Roman", "Frutiger CE 55 Roman", "Humanist 777", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Helvetica, sans-serif;
   --reading-measure: 60ch;
   --muted: rgba(31, 30, 28, 0.65);
   --btn: #1f1e1c;
@@ -33,10 +33,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: var(--journal-font);
   font-size: 19px;
   line-height: 1.6;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.005em;
 }
 
 .wrapper {
@@ -62,26 +62,27 @@ body {
 .back-home {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  margin: -1rem 0 1.5rem;
-  padding: 0.35rem 0.75rem 0.35rem 0.55rem;
-  border: 1px solid #cfcfcf;
-  border-radius: 999px;
-  background: #f6f6f6;
-  color: #1f1e1c;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  background: var(--ink);
+  color: #ffffff;
+  font-family: var(--journal-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+  box-shadow: 3px 6px 10px rgba(0,0,0,0.24);
+  transition: background 160ms ease, border-color 160ms ease;
 }
 
 .back-home:hover {
-  background: #ececec;
-  border-color: #bdbdbd;
-  transform: translateX(-1px);
+  background: #0f0f0f;
+  border-color: #0f0f0f;
 }
 
 .back-home:focus-visible {
@@ -89,9 +90,12 @@ body {
   outline-offset: 2px;
 }
 
-.back-home span[aria-hidden="true"] {
-  font-size: 1rem;
-  line-height: 1;
+.page-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 2px dotted var(--brand-blue);
 }
 
 /* footer card spacing */
@@ -109,7 +113,7 @@ body {
 /* ===== Typography ===== */
 .site-title,
 .sub {
-  font-family: "Linux Libertine", "EB Garamond", serif;
+  font-family: var(--journal-font);
   font-variant-caps: small-caps;
   color: var(--ink);
   text-align: center;
@@ -126,9 +130,35 @@ body {
 }
 
 .home-title {
-  font-size: clamp(1rem, 5.5vw, 2.4rem);
-  letter-spacing: clamp(0.14em, 1.2vw, 0.35em);
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(0.8rem, 2.1vw, 1.4rem);
+  margin-bottom: 0.3rem;
+  font-size: clamp(1.9rem, 6vw, 3.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-variant-caps: normal;
+  text-align: left;
+  text-transform: lowercase;
+  white-space: normal;
+}
+
+.home-name {
+  display: inline-block;
+}
+
+.home-tagline {
+  display: inline-block;
+  padding: 0.28em 0;
+  min-width: min(34vw, 13ch);
+  font-size: clamp(0.86rem, 1.9vw, 1.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  text-align: center;
+  text-transform: lowercase;
 }
 
 .sub {
@@ -163,16 +193,17 @@ li + li {
   display: block;
   width: 100%;
   border: 0;
-  margin: 2rem 0;
+  margin: 0;
 }
 
 .blue-rule {
   border-top: 3px solid var(--brand-blue);
+  margin: 2rem 0;
 }
 
 .dotted-blue-rule {
   border-top: 2px dotted var(--brand-blue);
-  margin: 0.4rem 0 1rem 0;
+  margin: 1.25rem 0;
 }
 
 hr,
@@ -180,7 +211,7 @@ hr,
   display: block;
   width: 100%;
   height: 0;
-  margin: 2rem 0;
+  margin: 0;
   border: 0;
   border-top: 3px solid var(--brand-blue);
 }
@@ -211,7 +242,7 @@ button.button {
 
   background: var(--brand-blue);
   color: #ffffff;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--journal-font);
   font-weight: 700;
 
   border: 1px solid var(--brand-blue);
@@ -287,6 +318,35 @@ button.button:active {
 .photo-caption-card p:last-child {
   margin-bottom: 0;
 }
+/* ===== Link-tree blocks ===== */
+.link-block {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-family: var(--journal-font);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  box-shadow: 5px 10px 14px rgba(0, 0, 0, 0.30);
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.link-block:hover {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+}
+
+.link-block:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   display: flex;
@@ -314,11 +374,16 @@ button.button:active {
     padding: 2.2rem 1.3rem;
   }
 
-  .back-home {
-    margin-top: -0.4rem;
+  .home-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: clamp(1.75rem, 10vw, 2.35rem);
+    text-align: center;
   }
 
-  .home-title {
-    font-size: clamp(0.9rem, 7.2vw, 1.9rem);
+  .home-tagline {
+    min-width: min(72vw, 13ch);
+    font-size: clamp(0.82rem, 4.8vw, 1.05rem);
   }
 }
