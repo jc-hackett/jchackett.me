@@ -13,9 +13,8 @@
   font-weight: 700;
 
   background: #ffffff;
-  border: 1px solid #e5e5e5;
+  border: 2px solid #d0cbc4;
   border-radius: 3px;
-  box-shadow: 5px 10px 14px rgba(0,0,0,0.30);
 }
 
 .disclosure-group > details[open] .content-block {
@@ -28,9 +27,6 @@
   color: #ffffff;
   border-color: var(--ink);
 
-  box-shadow:
-    0 0 0 5px rgba(0,0,0,0.05),
-    0 12px 34px rgba(0,0,0,0.06);
 }
 
 /* hide default disclosure arrows */
@@ -63,15 +59,11 @@ summary::-webkit-details-marker {
 
 .disclosure-item {
   background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.14);
+  border: 2px solid rgba(0,0,0,0.22);
   border-radius: 6px;
 
   padding: 1.25rem;
   margin-top: 1.2rem;
-
-  box-shadow:
-    0 0 0 3px rgba(0,0,0,0.03),
-    0 8px 18px rgba(0,0,0,0.10);
 }
 
 /* top-level disclosure trigger */

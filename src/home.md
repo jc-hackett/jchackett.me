@@ -20,7 +20,7 @@ Talking really can help.
 Speaking without censorship to a compassionate, interested listener is a timeless process. It helps us see and think differently. It disrupts rigid and uncharitable ways of thinking. 
 
 It can help bring us relief.</p></div>
-<hr class="blue-rule" id="services-reset">
+<p>‎</p>
 {% include "components/services.njk" %}
 
 {% include "components/about-me.njk" %}
