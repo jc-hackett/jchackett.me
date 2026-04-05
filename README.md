@@ -1,1 +1,3 @@
-Hey all. This is the repository for my website, jchackett.me. It is built using Eleventy & Netlify. I used LLMs in the process: ChatGPT 5.4 & GitHub Copilot (mostly Claude).
+A few years ago I tried to make a static website with Jekyll, but LLMs weren't quite there yet in terms of being helpful (at least for my skill level -- plus the expression 'vibecoding' hadn't become ubiquitious). I abandoned the mission of that website -- it was too fussy. During that time, I did learn how to use VS Code to a rudimentary degree.
+
+A month ago, I decided to take another swing at a site. This time, I pulled ChatGpt 5.4 into the mix. It recommended [Netlify](www.netlify.com) & [11ty](www.11ty.dev), so I got to work. At first, I worked very cut and paste with just ChatGPT, but then I sped things along with some Git CoPilot usage.
