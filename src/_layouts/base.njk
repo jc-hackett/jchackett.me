@@ -58,9 +58,6 @@
         {% else %}
         {{ title }}
         {% endif %}
-        {% if page.url == "/" and homeTagline %}
-        <span class="home-tagline">{{ homeTagline }}</span>
-        {% endif %}
       </h1>
       {% endif %}
       {{ content | safe }}
