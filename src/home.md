@@ -40,7 +40,7 @@ In addition to traditional talk therapy, I offer **individual and small team con
 
 {% include "components/contact-me.njk" %}
 
-<a class="disclosure-header bluesky-follow" href="https://bsky.app/profile/jchackett.bsky.social" target="_blank" rel="noopener noreferrer">Follow me on Bluesky</a>
+<a class="disclosure-header bluesky-follow" href="https://bsky.app/profile/jchackett.me" target="_blank" rel="noopener noreferrer">Follow me on Bluesky</a>
 
 <hr class="rule dotted-blue-rule">
 
