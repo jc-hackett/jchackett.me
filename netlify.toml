@@ -19,7 +19,6 @@
   from = "https://notes.jchackett.me/*"
   to = "/notes/:splat"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/index.html"
