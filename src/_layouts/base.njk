@@ -40,6 +40,9 @@
 {% if page.url == "/" %}
 <link rel="stylesheet" href="/css/components/homepage.css">
 {% endif %}
+{% if "/notes" in page.url %}
+<link rel="stylesheet" href="/css/components/notes.css">
+{% endif %}
 <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap">

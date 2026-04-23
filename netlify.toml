@@ -10,6 +10,12 @@
   NODE_VERSION = "20"
 
 [[redirects]]
+  from = "https://notes.jchackett.me/"
+  to = "https://notes.jchackett.me/notes/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301

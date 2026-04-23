@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<div class="note-meta">
+  <time class="note-date" datetime="{{ date | dateIso }}">{{ date | dateDisplay }}</time>
+  {%- if subtitle %}
+  <p class="note-subtitle">{{ subtitle }}</p>
+  {%- endif %}
+</div>
+{{ content | safe }}

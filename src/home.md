@@ -18,9 +18,7 @@ Are you looking to talk to someone about your frustration and anger? Are you loo
 
 Consider reaching out. Counseling can help.
 
-If you’re skeptical, that’s okay. I often find that skepticism is something we can work with.
-
-Many men fall into patterns shaped by suppression and avoidance. These patterns tend to persist because they’re effective in the short term.
+If you’re skeptical, that’s okay. I often find that skepticism is something we can work with. Many men fall into patterns shaped by suppression and avoidance. These patterns tend to persist because they’re extremely effective — but only for a short while.
 
 Through dialogue, interview, and review, these patterns can be named, understood, and communicated more clearly—to yourself and to others. They become something you can actually work with.
 

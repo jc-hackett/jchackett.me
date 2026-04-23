@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Notes
+permalink: /notes/
+showBackLink: false
+---
+<p class="notes-tagline">Short notes, memos, and public drafts.</p>
+{%- if collections.notes.length == 0 %}
+<p class="notes-empty">No notes yet.</p>
+{%- else %}
+<ul class="notes-list">
+{%- for note in collections.notes %}
+  <li class="notes-item">
+    <a class="notes-item-link" href="{{ note.url }}">{{ note.data.title }}</a>
+    <time class="notes-item-date" datetime="{{ note.date | dateIso }}">{{ note.date | dateDisplay }}</time>
+    {%- if note.data.subtitle %}
+    <p class="notes-item-subtitle">{{ note.data.subtitle }}</p>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>
+{%- endif %}
