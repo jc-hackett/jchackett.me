@@ -10,9 +10,15 @@
   NODE_VERSION = "20"
 
 [[redirects]]
-  from = "https://notes.jchackett.me/"
-  to = "https://notes.jchackett.me/notes/"
-  status = 301
+  from = "https://notes.jchackett.me/notes/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "https://notes.jchackett.me/*"
+  to = "/notes/:splat"
+  status = 200
   force = true
 
 [[redirects]]
